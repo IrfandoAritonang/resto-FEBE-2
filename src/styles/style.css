@@ -1,0 +1,389 @@
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body {
+ font-family: "Poppins", sans-serif;
+ background-color: #ffffff;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+}
+
+/* menju ke konten */
+.skip-link {
+ position: absolute;
+ top: -40px;
+ padding: 8px;
+ z-index: 100;
+ left: 0;
+ background-color: #bf1722;
+ color: white;
+
+}
+
+.skip-link:focus {
+ top: 0;
+ transition: all 0.5s;
+}
+
+/*
+  Like
+*/
+.like {
+ font-size: 18px;
+ position: fixed;
+ bottom: 16px;
+ right: 16px;
+ background-color: #db0000;
+ color: white;
+ border: 0;
+ border-radius: 50%;
+ width: 55px;
+ height: 55px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+/*
+   AppBar
+ */
+
+.app-bar {
+ padding: 8px 16px;
+ background-color: #583D72;
+ display: grid;
+ color: white;
+ grid-template-columns: auto 1fr auto;
+ gap: 10px;
+ position: sticky;
+ top: 0;
+ z-index: 99;
+ box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar__menu button {
+ padding: 8px;
+ cursor: pointer;
+ color: white;
+ background-color: #583D72;
+ min-height: 44px;
+ min-width: 44px;
+ background-color: transparent;
+ border: none;
+ font-size: 18px;
+}
+
+.app-bar .app-bar__menu {
+ display: flex;
+ align-items: center;
+}
+
+
+.app-bar .app-bar__brand {
+ display: flex;
+ align-items: center;
+}
+
+.app-bar .app-bar__brand a {
+ color: #583D72;
+ text-transform: uppercase;
+ font-size: 22px;
+ min-height: 44px;
+ min-width: 44px;
+ text-align: center;
+ line-height: 44px;
+ font-weight: 600;
+ display: block;
+ user-select: none;
+
+}
+
+.app-bar .app-bar__navigation {
+ position: absolute;
+ width: 150px;
+ transition: all 0.3s;
+ padding: 8px;
+ top: 50px;
+ left: -180px;
+ background-color: #583D72;
+ overflow: hidden;
+}
+
+.app-bar .app-bar__navigation.open {
+ left: 0;
+ /* height: 100vh; */
+}
+
+.app-bar .app-bar__navigation ul li a {
+ display: inline-block;
+ margin-bottom: 5px;
+ width: 100%;
+ min-width: 44px;
+ text-decoration: none;
+ color: white;
+ padding: 8px;
+ min-height: 44px;
+}
+
+/* hero */
+.hero {
+ position: relative;
+ width: 100%;
+ height: 35vh;
+}
+
+.hero img {
+ width: 100%;
+ height: 100%;
+}
+
+.hero .judul {
+ width: 100%;
+ height: 35vh;
+ color: white;
+ position: absolute;
+ top: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.hero .judul h4 {
+ font-weight: bold;
+ font-size: 30px;
+ color: #fff;
+ opacity: 2.0;
+ font-family: emoji
+}
+
+/*
+   Main Content
+ */
+
+main {
+ flex: 1;
+ width: 100%;
+}
+
+.content {
+ min-height: 100%;
+ margin: 0 auto;
+}
+
+.content h2 {
+ margin-bottom: -10px;
+ text-align: center;
+ color: #000000;
+ font-size: 24px;
+ margin-top: 12px;
+
+}
+
+.content .content__heading {
+ font-weight: normal;
+ margin-top: 40px;
+}
+
+.Restaurant {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 16px;
+ margin: 32px 0;
+ padding: 0px 32px;
+}
+
+.resto-item {
+ width: 100%;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ border-radius: 8px;
+ overflow: hidden;
+ max-width: 400px;
+}
+
+.resto-item .resto-item__header .resto-item__header__poster {
+ width: 100%;
+ height: 340px;
+}
+.resto-item__header {
+ position: relative;
+}
+
+
+.resto-item .resto-item__header .resto-item__header__rating {
+ position: absolute;
+ display: inline-block;
+ background-color: #583D72;
+ color: white;
+ border-radius: 5px 0px 0px 5px;
+ padding: 8px;
+ top: 0px;
+ right: 0px;
+}
+
+.resto-item .resto-item__content h3 {
+ margin: 0 0 10px 0;
+ text-align: left;
+}
+
+.resto-item .resto-item__content .resto-item__content__city {
+ margin-left: 5px;
+	display: inline-block;
+	position:absolute;
+	padding: 0px;
+}
+
+.resto-item
+ .resto-item__header
+ .resto-item__header__rating
+ .resto-item__header__rating__score {
+ margin-left: 10px;
+}
+
+
+.resto-item .resto-item__content {
+ padding: 16px;
+}
+
+.resto-item .resto-item__content h3 a {
+ min-height: 44px;
+ min-width: 44px;
+ color: #583D72;
+ text-decoration: none;
+ display: block;
+}
+
+.resto-item .resto-item__content p {
+ overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-line-clamp: 4; 
+ -webkit-box-orient: vertical;
+ color: #000000;
+ text-align: justify;
+}
+
+
+
+.Restaurant-detail {
+ padding: 0px 32px;
+}
+
+.Restaurant-detail .resto__poster {
+ margin: auto;
+ padding-top: 20px;
+ width: 100%;
+ max-width: 760px;
+ display: block;
+ border-radius: 5px 5px 5px 5px;
+}
+
+.Restaurant-detail .resto__title {
+ color: #583D72;
+ text-align: center;
+}
+
+.Restaurant-detail .resto__info h3,
+.Restaurant-detail .resto__info p {
+ color: #000000;
+}
+
+.Restaurant-detail .resto__info h3 {
+ margin: 8px 0;
+ color: #583D72;
+}
+
+.Restaurant-detail .resto__info li {
+ list-style: none;
+ color: #000000;
+}
+
+
+.Restaurant-detail .review {
+ display: flex;
+ margin-top: 20px;
+ flex-wrap: wrap;
+ gap: 10px;
+}
+
+.Restaurant-detail .review-card {
+ display: flex;
+ flex-direction: column;
+ background-color: rgb(224, 224, 224);
+ padding: 20px;
+ width: 200px;
+ height: 200px;
+ border: 1px solid #b0b0b0;
+ margin: auto;
+ justify-content: left;
+ border-radius: 5px;
+}
+
+.Restaurant-detail .review-card p {
+ color: #583D72;
+}
+
+.Restaurant-detail .review-card i {
+ text-align: center;
+ font-size: 2rem;
+ color: #000000;
+}
+
+.Restaurant-detail .review-card .review-name {
+ font-weight: 600;
+ text-align: center;
+ font-size: 1.1rem;
+}
+
+.Restaurant-detail .review-card .review-comment {
+ font-size: 0.9rem;
+ text-align: center;
+ height: 150px;
+ color: #000000;
+}
+
+.Restaurant-detail .review-card .review-date {
+ font-size: 0.8rem;
+ margin-top: 0px;
+ text-align: center;
+}
+
+.resto__info .resto__overview h3 {
+ color: #583D72;
+}
+
+.resto__info .resto__overview p {
+ color: #000000;
+}
+
+
+
+/*
+   Footer
+ */
+
+footer {
+  margin-top: 16px;
+ padding: 16px;
+ background-color: #583D72;
+}
+
+footer p {
+ text-align: center;
+ color: #ffffff;
+}
+
+footer p a {
+ color: white;
+ display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+ text-decoration: none;
+}
+

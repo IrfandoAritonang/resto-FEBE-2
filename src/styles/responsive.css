@@ -1,0 +1,86 @@
+@media screen and (min-width: 1200px) {
+ .resto-item .resto-item__content p {
+   font-size: 0.8rem;
+ }
+}
+
+@media screen and (min-width: 850px) {
+
+ .Restaurant-detail {
+   padding: 0px 100px;
+ }
+
+ .Restaurant-detail .kategori {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 100px;
+ }
+ .hero {
+   height: 70vh;
+ }
+
+ .hero .judul {
+   height: 70vh;
+ }
+
+ .hero .judul h4 {
+   font-weight: 300;
+   font-size: 80px;
+ }
+
+ .content h2 {
+   font-size: 40px;
+ }
+
+
+}
+
+
+@media screen and (min-width: 800px) {
+ .app-bar .app-bar__brand a {
+   font-size: 2em;
+ }
+
+ .Restaurant-detail .review-card {
+   height: 250px;
+   width: 300px;
+   
+ }
+}
+
+
+@media screen and (min-width: 650px) {
+ .app-bar {
+   padding: 8px 32px;
+   grid-template-columns: 1fr auto;
+   
+ }
+
+ .app-bar .app-bar__brand h1 {
+   font-size: 1.5em;
+ }
+
+ .app-bar .app-bar__menu {
+   display: none;
+ }
+ 
+ .app-bar .app-bar__navigation ul li {
+   display: inline-block;
+ }
+
+ .app-bar .app-bar__navigation {
+   width: 100%;
+   position: static;
+ }
+
+ .app-bar .app-bar__navigation ul li a {
+   display: inline-block;
+   width: 120px;
+   text-align: center;
+   margin: 0;
+ }
+}
+
+
+
