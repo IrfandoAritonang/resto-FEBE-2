@@ -1,12 +1,12 @@
 /* eslint-disable import/prefer-default-export */
 import CONFIG from '../../globals/config';
-import imghero from '../../../public/heros/hero-image_4.jpg';
+// import imghero from '../../../public/heros/hero-image_4.jpg';
 
 const createHeroImage = `
 
   <style>
   .hero{
-      background:linear-gradient(rgba(0, 0, 5, .5), rgba(0, 0, 5, .5)), url(${imghero});
+      background:linear-gradient(rgba(0, 0, 5, .5), rgba(0, 0, 5, .5)), url(${'/heros/hero-image_4.jpg'});
       background-size: cover;
       min-height: 480px;
       height: 35vh;
@@ -24,7 +24,7 @@ const createHeroImage = `
       text-align: center;
   }
   </style>
-  <div class="hero">
+  <div class="lazyload hero">
       <div class="judul">
           <h1 id="tagline"><span>Come visit the best restaurants <br>In Indonesia</span></h1>
       </div>
@@ -51,7 +51,7 @@ const emptyData = `
 const createRestoItemTemplate = (resto) => `
   <div class="resto-item">
     <div class="resto-item__header">
-        <img class="resto-item__header__poster" alt="${resto.name}"
+        <img class="lazyload resto-item__header__poster" alt="${resto.name}"
             src="${resto.pictureId ? CONFIG.BASE_IMAGE_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
         <div class="resto-item__header__rating">
             <p>⭐️<span class="resto-item__header__rating__score">${resto.rating}</span></p>
@@ -59,7 +59,7 @@ const createRestoItemTemplate = (resto) => `
     </div>
     <div class="resto-item__content">
         <p><i class="material-icons">&#xe563;</i><span class="resto-item__content__city">${resto.city}</span></p>
-        <h3><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
+        <h3 class = "restaurant__title"><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h3>
         <p>${resto.description}</p>
     </div>
   </div>
@@ -97,7 +97,7 @@ const createRestoDetailTemplate = (resto) => `
       text-decoration : none;
     }
   </style>
-  <img class="resto__poster" src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="${resto.restaurant.name}" />
+  <img class="lazyload resto__poster" src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="${resto.restaurant.name}" />
   <h2 class="resto__title">${resto.restaurant.name}</h2>
   <div class="resto__info">
     <h3>Information</h3>
@@ -171,14 +171,14 @@ const createRestoDetailTemplate = (resto) => `
   </div>
 `;
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
+const createLikeMovieButtonTemplate = () => `
+  <button aria-label="like this resto" id="likeButton" class="like">
+      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createUnlikeMovieButtonTemplate = () => `
+  <button aria-label="unlike this resto" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
@@ -186,8 +186,8 @@ const createLikedButtonTemplate = () => `
 export {
   createRestoItemTemplate,
   createRestoDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeMovieButtonTemplate,
+  createUnlikeMovieButtonTemplate,
   createHeroImage,
   emptyData,
 };

@@ -9,6 +9,8 @@ const CONFIG = {
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurant',
   CACHE_NAME: new Date().toISOString(),
+  IMAGE_HERO_LARGE_PATH: './heros/hero-image_4-large',
+  IMAGE_HERO_SMALL_PATH: './heros/hero-image_4-small',
 };
 
 export default CONFIG;
